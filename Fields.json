@@ -1,0 +1,23 @@
+{
+	"Fields": [{
+		"Fname": "Vbeln"
+	}, {
+		"Fname": "Type"
+	}, {
+		"Fname": "Bukrs"
+	}, {
+		"Fname": "Amount"
+	}, {
+		"Fname": "InvDate"
+	}, {
+		"Fname": "InvStatus"
+	}, {
+		"Fname": "Waers"
+	}, {
+		"Fname": "Plant"
+	}, {
+		"Fname": "Netpr"
+	}, {
+		"Fname": "Matnr"
+	}]
+}

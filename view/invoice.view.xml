@@ -1,0 +1,42 @@
+<mvc:View controllerName="UI5Day3.controller.invoice" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core">
+	<Page title="{i18n>homePageTitle}">
+		<content>
+			<Input placeholder="{i18n>invNumber}" value="{/invInput/invNumber}" description="{i18n>invNumber} is {/invInput/invNumber} "
+				valueLiveUpdate="true" class="sapUiResponsiveMargin"/>
+			<Input class="sapUiResponsiveMargin" placeholder="{i18n>invType}" value="{/invInput/invType}"
+				description="{i18n>invType} is {/invInput/invType}" valueLiveUpdate="true"/>
+			<Input class="sapUiResponsiveMargin" placeholder="{i18n>compCode}" value="{/invInput/compCode}"
+				description="{i18n>compCode} is {/invInput/compCode}" valueLiveUpdate="true"/>
+			<Button class="sapUiResponsiveMargin" text="Search" press="onSearchINV"/>
+			<List id="invList" headerText="{i18n>invList}" class="sapUiResponsiveMargin" width="auto"
+				items="{ path : 'inv>/Invoices', sorter : { path : 'Bukrs', group : true }}">
+				<items>
+					<ObjectListItem title="{inv>Vbeln} - {inv>Matnr}"
+						number="{ parts: [{path: 'inv>Netpr'}, {path: 'inv>Waers'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+						numberUnit="{inv>Waers}" numberState="{= ${inv>Netpr} > 120 ? 'Error' : 'Success' }" type="Navigation" press="showDetails">
+						<ObjectAttribute text="{inv>Bukrs}"/>
+						<ObjectAttribute text="{inv>Plant}"/>
+						<markers>
+							<ObjectMarker type="{= ${inv>InvStatus} === 'CONF' ? 'Favorite' : 'Flagged' }"/>
+						</markers>
+						<firstStatus>
+							<ObjectStatus text="{ path: 'inv>InvStatus', formatter:'.formatter.readableInvStatus'}"/>
+						</firstStatus>
+					</ObjectListItem>
+				</items>
+				<headerToolbar>
+					<OverflowToolbar>
+						<Label  text="{i18n>sortField}"/>
+						<ComboBox id="oSelectS" change="handleSortCC" items="{ path: 'fields>/Fields', sorter: { path: 'Fname' } }">
+							<core:Item key="{fields>Fname}" text="{fields>Fname}"/>
+						</ComboBox>
+						<Label  text="{i18n>groupbyField}"/>
+						<ComboBox id="oSelectG" change="handleGroupCC" items="{ path: 'fields>/Fields', sorter: { path: 'Fname' } }">
+							<core:Item key="{fields>Fname}" text="{fields>Fname}"/>
+						</ComboBox>
+					</OverflowToolbar>
+				</headerToolbar>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

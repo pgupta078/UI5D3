@@ -1,0 +1,47 @@
+{
+	"Invoices": [{
+		"Vbeln": "1",
+		"Type": "NB",
+		"Bukrs": "US01",
+		"Amount": 100,
+		"InvDate": "2020-06-23T00:00:00",
+		"InvStatus": "CONF",
+		"Waers": "INR",
+		"Plant": "USP1",
+		"Netpr": 20000,
+		"Matnr": "USM1"
+	}, {
+		"Vbeln": "2",
+		"Type": "NB",
+		"Bukrs": "US02",
+		"Amount": 200,
+		"InvDate": "2020-06-21T00:00:00",
+		"InvStatus": "CONF",
+		"Waers": "INR",
+		"Plant": "USP2",
+		"Netpr": 20000,
+		"Matnr": "USM1"
+	}, {
+		"Vbeln": "3",
+		"Type": "NB",
+		"Bukrs": "US01",
+		"Amount": 300,
+		"InvDate": "2020-06-13T00:00:00",
+		"InvStatus": "OPEN",
+		"Waers": "INR",
+		"Plant": "USP3",
+		"Netpr": 20000,
+		"Matnr": "USM1"
+	}, {
+		"Vbeln": "4",
+		"Type": "NB",
+		"Bukrs": "US01",
+		"Amount": 400,
+		"InvDate": "2020-06-12T00:00:00",
+		"InvStatus": "PEND",
+		"Waers": "INR",
+		"Plant": "USP3",
+		"Netpr": 20000,
+		"Matnr": "USM1"
+	}]
+}

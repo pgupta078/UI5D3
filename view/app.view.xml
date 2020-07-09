@@ -1,0 +1,5 @@
+<mvc:View controllerName="UI5Day3.controller.app" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+	<Shell>
+		<App class="invApp" id="app"/>
+	</Shell>
+</mvc:View>
